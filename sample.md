@@ -1,0 +1,10 @@
+---
+lang: fr-FR
+glaces:
+  select: flavors
+  from: 'ice-cream.yaml'
+  where: 'introduced >= 1960-01-01'
+  order: date desc, name
+  group: type
+...
+

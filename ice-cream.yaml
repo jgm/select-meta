@@ -1,0 +1,18 @@
+---
+flavors:
+- name: Chocolate
+  introduced: 2009-04-30
+  type: traditional
+- name: Vanilla
+  introduced: 1950-05-01
+  type: traditional
+- name: Melon
+  introduced: 2010-01-01
+  type: sorbet
+- name: Peach
+  introduced: 2011-03-03
+  type: sorbet
+- name: Dark Chocolate
+  introduced: 2015-03-15
+  type: gelato
+...
