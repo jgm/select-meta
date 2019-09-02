@@ -99,7 +99,7 @@ local function parse_selector(val)
                  local ts = {}
                  local index = {}
                  for _,x in pairs(t) do
-                   local k = x[groupby] and stringify(x[groupby])
+                   local k = (x[groupby] and stringify(x[groupby])) or ''
                    local i
                    if index[k] then
                      table.insert(ts[index[k]].items, x)
