@@ -8,8 +8,9 @@
 -- - select: articles
 --   from: articles.yaml
 --   where: 'year > 2009'
---   group: author
 --   order: author, title asc
+--   limit: 5
+--   group: author
 -- ...
 
 local stringify = pandoc.utils.stringify
@@ -26,6 +27,7 @@ local function parse_selector(val)
   local where = ''
   local order = ''
   local groupby = ''
+  local limit
   if val.where then
     where = stringify(val.where)
     end
@@ -34,6 +36,9 @@ local function parse_selector(val)
     end
   if val.group then
     groupby = stringify(val.group)
+  end
+  if val.limit then
+    limit = tonumber(stringify(val.limit))
   end
   local field, comparison, value =
               string.match(where, "%s*([%w_-]+)%s*([!=<>]+)%s(.*)")
@@ -114,6 +119,8 @@ local function parse_selector(val)
                  return ts
                end
              end,
+
+             limit = limit
          }
 end
 
@@ -132,6 +139,14 @@ local function get_selected_metadata(val)
   end
   if selector.order then
      table.sort(metalist, selector.order)
+  end
+  if selector.limit then
+    local limit = selector.limit
+    for i,_ in pairs(metalist) do
+      if i > limit then
+        metalist[i] = nil
+      end
+    end
   end
   return pandoc.MetaList(selector.group(metalist))
 end
