@@ -1,0 +1,5 @@
+data-dir: .
+css:
+- /assets/css/normalize.css
+- /assets/css/style.css
+number-sections: true

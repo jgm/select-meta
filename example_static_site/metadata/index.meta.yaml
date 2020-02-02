@@ -1,0 +1,22 @@
+---
+title-prefix: The Site
+title: A Fitting Title
+subtitle: A Non-conforming Subtitle
+author:
+- name: Author One
+  affiliation: University of Internets
+- name: Author Two
+  affiliation: Backstreet Education
+date: 2020-01-26
+keywords:
+- test
+- pandoc
+- customization
+- awesomeness
+comments:
+  select: comments
+  from: 'metadata/index.comments.yaml'
+  order: date desc
+  limit: 3
+toc-title: Home - Table of Contents
+---
