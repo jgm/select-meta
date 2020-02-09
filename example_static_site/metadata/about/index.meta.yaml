@@ -1,0 +1,18 @@
+---
+title-prefix: The Site
+title: All About It
+subtitle: Subtitle of About all the Things
+author:
+- name: Mr. About Face
+  affiliation: University of About
+- name: Ms. Abdul
+  affiliation: Straight Up Now Baby
+date: 2020-01-30
+keywords:
+- test
+- pandoc
+- customization
+- awesomeness
+- about
+toc-title: About Page ToC
+---
